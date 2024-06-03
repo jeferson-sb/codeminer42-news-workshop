@@ -19,10 +19,6 @@
   }
 }
 
-.heading {
-  text-wrap: balance;
-}
-
 .categoryStory {
   & p {
     display: -webkit-box;

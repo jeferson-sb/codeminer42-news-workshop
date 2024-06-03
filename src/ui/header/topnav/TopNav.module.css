@@ -32,8 +32,8 @@
   --button-text-color: hsl(0, 0%, 96%);
 
   min-height: 38px;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  font-size: var(--text-base);
   padding: 0 1rem;
   background-color: var(--button-bg-color);
   color: var(--button-text-color);

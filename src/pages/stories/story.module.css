@@ -37,7 +37,6 @@
   font-size: clamp(1.5rem, var(--text-base) + 1vw, 2.5rem);
   line-height: var(--lh-short);
   font-style: italic;
-  text-wrap: balance;
 }
 
 .author {

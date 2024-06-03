@@ -1,0 +1,99 @@
+@layer theme {
+  :root {
+    /* Typography */
+    --text-xsm: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 2.5rem;
+    --text-3xl: 3.75rem;
+
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    --lh-base: 1.5;
+    --lh-short: 1.375;
+    --lh-tall: 1.65;
+
+    /* Sizes */
+    --sz-sm: 0.5rem;
+    --sz-base: 1rem;
+    --sz-md: 1.5rem;
+    --sz-lg: 2rem;
+    --sz-xl: 2.5rem;
+    --sz-2xl: 3rem;
+    --sz-3xl: 3.5rem;
+
+    /* Colors */
+    --white: lch(96.19% 0 0);
+    --black: lch(7.25% 0 0);
+    --red: lch(56.38% 82.73 33.12);
+    --gray-100: hsl(210 16.7% 95.3%);
+    --gray-200: hsl(210 15.8% 92.5%);
+    --gray-300: hsl(210 13.8% 88.6%);
+    --gray-400: hsl(210 14% 83.1%);
+    --gray-500: hsl(210 10.8% 71%);
+    --gray-600: hsl(210 7.1% 55.7%);
+    --gray-700: hsl(210 8.8% 31.4%);
+    --gray-800: hsl(210 10.3% 22.7%);
+    --gray-900: hsl(210 10.8% 14.5%);
+
+    /* Border */
+    --soft-border: var(--gray-900);
+    --hard-border: var(--black);
+    --full-radius: 9999px;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-body);
+  }
+
+  p,
+  div,
+  span {
+    font-family: var(--font-body);
+  }
+
+  body {
+    color-scheme: light;
+    line-height: 1.5;
+    font-family: var(--font-body), system-ui;
+    font-display: optional;
+    scrollbar-gutter: stable;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: var(--white);
+    color: var(--black);
+    font-family: var(--font-body);
+    width: min(1200px, 100% - 1rem);
+    margin: 0 auto;
+  }
+
+  img:not([class]) {
+    object-fit: cover;
+  }
+
+  button {
+    display: inline-block;
+    cursor: pointer;
+    outline-color: transparent;
+    border-color: transparent;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%);
+    background: var(--red);
+    color: var(--white);
+    padding: 10px;
+
+    &:focus {
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.brand {
+  font-family: var(--font-brand), cursive;
+  font-size: clamp(var(--min, 1rem),
+      1rem + var(--target, 3vw),
+      var(---max, 4rem));
+}
+
+.small {
+  --target: 1vw;
+}
+
+.medium {
+  --target: 2vw;
+}

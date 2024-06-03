@@ -1,0 +1,50 @@
+.topNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-block: 0.75rem;
+}
+
+.topNavLeft {
+  & :is(svg, time) {
+    vertical-align: middle;
+  }
+
+  & time {
+    margin-inline-start: 0.25rem;
+  }
+}
+
+.topNavRight {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.searchButton {
+  background-color: transparent;
+  color: var(--black);
+}
+
+.button {
+  --button-bg-color: hsl(179, 51%, 32%);
+  --button-bg-lighter: hsla(179, 51%, 32%, 0.3);
+  --button-text-color: hsl(0, 0%, 96%);
+
+  min-height: 38px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0 1rem;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border-radius: 4px;
+  transition: background-color 400ms ease-out;
+
+  &:hover {
+    --button-bg-color: hsl(179, 51%, 25%);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--button-bg-lighter) 0 0 0 3px;
+  }
+}

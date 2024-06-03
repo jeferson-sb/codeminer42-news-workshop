@@ -1,0 +1,18 @@
+.divider {
+  display: block;
+  opacity: var(--tone, 1);
+  background-color: var(--color, var(--hard-border));
+  margin-block: var(--spacing-y, 0);
+  margin-inline: var(--spacing-x, 0);
+  border: none;
+
+  &[aria-orientation=horizontal] {
+    width: 100%;
+    height: var(--thickness, 1px);
+  }
+
+  &[aria-orientation=vertical] {
+    width: var(--thickness, 1px);
+    height: 100%;
+  }
+}

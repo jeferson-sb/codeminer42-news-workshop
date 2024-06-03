@@ -1,0 +1,29 @@
+.story {
+  & a {
+    transition: opacity 400ms ease-out;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+}
+
+.heading {
+  font-size: var(--text-xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tall);
+  margin-block-start: 1rem;
+}
+
+.abstract {
+  font-size: var(--text-sm);
+  margin-block: 0 1em;
+  color: var(--gray-700);
+
+  white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

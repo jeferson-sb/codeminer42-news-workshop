@@ -1,0 +1,35 @@
+.story {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+
+  & img {
+    min-width: 0;
+  }
+}
+
+.details {
+  margin-inline-end: 1rem;
+
+  & p {
+    margin-block: 0.5rem;
+    font-size: var(--text-base);
+    color: var(--gray-700);
+  }
+}
+
+.heading {
+  text-wrap: balance;
+}
+
+.categoryStory {
+  & p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+  }
+}

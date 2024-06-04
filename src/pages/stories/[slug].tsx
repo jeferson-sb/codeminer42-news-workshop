@@ -1,13 +1,15 @@
 import Image from 'next/image'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 
 import styles from './story.module.css'
 import { Divider } from '@/ui/primitives/divider/Divider'
-import { news } from '..'
+import api, { Story } from '@/lib/api'
 
-export default function StoryPost() {
-  const story = news.todayHighlight
+type StoryPostProps = {
+  story: Story
+}
 
+export default function StoryPost({ story }: StoryPostProps) {
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>{story.title}</h1>
@@ -56,4 +58,40 @@ export default function StoryPost() {
   )
 }
 
-// TODO: Exercise 2
+const getStories = async () => {
+  const response = await api.stories()
+
+  const { todayHighlight, secondaries, opinions, categorized } = response
+
+  const allcategorizedStories = Object.values(categorized).flat()
+
+  const stories = [
+    todayHighlight,
+    ...secondaries,
+    ...opinions,
+    ...allcategorizedStories,
+  ]
+
+  return stories
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const stories = (await getStories()).map((story) => `/stories/${story.slug}`)
+
+  return {
+    paths: stories,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps<{}, { slug: string }> = async (
+  context
+) => {
+  const slug = context.params?.slug
+
+  const story = (await getStories()).find((story) => story.slug === slug)
+
+  return {
+    props: { story },
+  }
+}

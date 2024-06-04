@@ -27,9 +27,18 @@ const slugify = (str: string) =>
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '')
 
+export type StoriesResponse = {
+  todayHighlight: Story
+  secondaries: Story[]
+  opinions: Story[]
+  categorized: Record<string, Story[]>
+}
+
 const api = {
   stories: async () => {
-    // TODO
+    const storiesApi = await fetch('http://localhost:3333/stories')
+
+    return storiesApi.json()
   },
 }
 

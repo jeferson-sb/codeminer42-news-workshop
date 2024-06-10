@@ -1,10 +1,8 @@
-function formatToFullDate(date: Date) {
-  return new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(date)
-}
+import { formatToLocaleDateStyle } from '../formatters/dateFormat'
 
 const now = new Date()
 const datetime = now.toISOString()
-const today = formatToFullDate(now)
+const today = formatToLocaleDateStyle(now, { dateStyle: 'full' })
 
 function TodayDatetime() {
   return (

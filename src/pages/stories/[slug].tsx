@@ -76,7 +76,9 @@ const getStories = async () => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const stories = (await getStories()).map((story) => `/stories/${story.slug}`)
+  const stories = (await getStories()).map((story) => ({
+    params: { slug: story.slug },
+  }))
 
   return {
     paths: stories,

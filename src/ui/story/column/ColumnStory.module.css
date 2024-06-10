@@ -1,0 +1,38 @@
+.story {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 1rem;
+
+  & h2 {
+    font-size: var(--text-lg);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-base);
+  }
+
+  & :is(span, time) {
+    color: var(--gray-700);
+  }
+
+  & p {
+    font-size: var(--text-sm);
+
+    white-space: pre-wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-block: 0.5em;
+  }
+
+  & span {
+    font-size: var(--text-xsm);
+    text-transform: uppercase;
+  }
+
+  .region {
+    font-size: var(--text-sm);
+    font-weight: var(--fw-bold);
+    color: var(--gray-600);
+    text-transform: capitalize;
+  }
+}

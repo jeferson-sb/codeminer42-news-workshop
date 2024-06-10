@@ -5,7 +5,7 @@ function Menu() {
   return (
     <ul className={styles.menu}>
       <li>
-        <Link href="/section/world">World</Link>
+        <Link href="/world">World</Link>
       </li>
       <li>
         <Link href="/section/politics">Politics</Link>

@@ -1,0 +1,11 @@
+.list {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2rem;
+  margin-block: 2rem;
+  width: min(800px, 100% - 2rem);
+}
+
+.pageTtile {
+  font-size: var(--text-2xl);
+}

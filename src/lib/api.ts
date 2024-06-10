@@ -13,7 +13,8 @@ type Author = {
 interface Story extends Entity {
   title: string
   poster: Image
-  category?: string
+  date: string
+  region?: string
   abstract: string
   author: Author
   slug: string

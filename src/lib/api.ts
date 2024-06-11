@@ -36,7 +36,7 @@ export type StoriesResponse = {
 }
 
 const api = {
-  stories: async () => {
+  stories: async (): Promise<StoriesResponse> => {
     const storiesApi = await fetch('http://localhost:3333/stories')
 
     return storiesApi.json()

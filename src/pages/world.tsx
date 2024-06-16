@@ -20,11 +20,13 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     response.todayHighlight,
     ...response.secondaries,
     ...allCategories,
-  ].sort((storyA, storyB) => {
-    if (storyA.region === storyB.region) return 0
-    if (storyA.region === region) return -1
-    return 1
-  })
+  ]
+    .filter((s) => !!s.region)
+    .sort((storyA, storyB) => {
+      if (storyA.region === storyB.region) return 0
+      if (storyA.region === region) return -1
+      return 1
+    })
 
   return {
     props: {
@@ -36,7 +38,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 export default function World({ allStories }: WorldProps) {
   return (
     <div className={styles.list}>
-      <h2 className={styles.pageTtile}>World</h2>
+      <h2 className={styles.pageTitle}>World</h2>
 
       {allStories.map((story, i, arr) => (
         <Fragment key={story.id}>

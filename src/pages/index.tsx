@@ -28,6 +28,8 @@ export default function Home({ stories }: HomeProps) {
   )
 }
 
+// TODO: revalidate every 30 minutes
+
 export const getStaticProps: GetStaticProps = async (): Promise<
   GetStaticPropsResult<{ stories: StoriesResponse }>
 > => {

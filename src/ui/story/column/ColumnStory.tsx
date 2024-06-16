@@ -17,9 +17,11 @@ function ColumnStory({ story }: ColumnStoryProps) {
     <article className={styles.story}>
       <time>{formatToLocaleDateStyle(new Date(story.date))}</time>
       <div>
-        <span className={styles.region}>
-          {formatToLocaleRegion(story.region)}
-        </span>
+        {story.region && (
+          <span className={styles.region}>
+            {formatToLocaleRegion(story.region)}
+          </span>
+        )}
         <Link href={`/stories/${story.slug}`}>
           <h3>{story.title}</h3>
         </Link>
